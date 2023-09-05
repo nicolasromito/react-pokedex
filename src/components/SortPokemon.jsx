@@ -1,16 +1,12 @@
 import React, { useContext, useEffect, useState }  from 'react'
 import { Context } from '../context/Context';
-// import { FaCaretDown } from "react-icons/fa";
-
+import { FaCaretDown } from "react-icons/fa";
 
 export const SortPokemon = () => {
 
     const { NameAsc, nameDesc, NumberAsc, NumberDesc, filterIcon, openFilter } = useContext(Context)
     
     const [state, setstate] = useState("Numero inferior");
-    function selectedItem(){
-
-    }
 
     return (
         <div className="sort-section">
@@ -19,8 +15,8 @@ export const SortPokemon = () => {
                 <div className="select-box" data-dropdown>
                     <label className="selected-item" data-dropdown-button>
                         {state}
-                        <div className="icon-container">
-                            {filterIcon}
+                        <div className="icon-container" data-dropdown-button-icon>
+                            <FaCaretDown/>
                         </div>
                     </label>
                     <ul className="select-items">

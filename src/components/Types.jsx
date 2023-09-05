@@ -3,13 +3,20 @@ import { Context } from '../context/Context';
 import { FaCaretUp, FaCaretDown } from "react-icons/fa";
 
 export const Types = () => {
+	
 	const { handleCheckbox, openTypeSelector, filterText, filterTypeIcon } = useContext(Context);
 
 	return ( 
 		<div className="types" data-types>
-			<button className="type-text" onClick={openTypeSelector} data-types-button>
-				{filterText} {filterTypeIcon}
-			</button>
+			<div className="type-filter">
+				<button className="type-text" onClick={openTypeSelector} data-types-button>
+					{filterText}
+					{/* {filterTypeIcon} */}
+				</button>
+				<button className="type-icon">
+					<FaCaretDown/>
+				</button>
+			</div>
 			<div className="type-menu" >
 				<div className="type-selected" >
 					<label className="grass type-name" htmlFor='grass'>Planta

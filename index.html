@@ -19,8 +19,8 @@
       }
       document.addEventListener("click", e => {
         const isDropdownButton = e.target.matches("[data-dropdown-button]")
+        const isDropdownButton2 = e.target.matches("[data-dropdown-button-icon]")
         if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
-  
         let currentDropdown
         if (isDropdownButton) {
           currentDropdown = e.target.closest("[data-dropdown]")

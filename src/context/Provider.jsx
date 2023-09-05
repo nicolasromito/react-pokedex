@@ -203,7 +203,7 @@ export const Provider = ({ children }) => {
 
   const scrollToTop = () =>{
     window.scrollTo({
-      top: 400, 
+      top: 200, 
       behavior: 'smooth'
     });
   };
@@ -256,10 +256,16 @@ export const Provider = ({ children }) => {
         );
         filteredTotal = filteredTotal.concat(filteredResults)
       }
-    });
+    }); 
     setfilteredPokemons(filteredTotal.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0)))
     setCantPokemons(filteredTotal.length)
   };
+  
+  useEffect(() => {
+    if(filteredPokemons.length == 0){
+      setOffset(12);
+    }
+  }, [filteredPokemons]);
 
   return (
     <Context.Provider

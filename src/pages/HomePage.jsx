@@ -7,13 +7,12 @@ import { Types } from '../components/Types';
 
 export const HomePage = () => {
  
-  const {onClickLoadMore, onClickOrderByName, onClickOrderByID, scrollToTop, cantPokemons} = useContext(Context)
-  
+  const {onClickLoadMore, onClickOrderByName, onClickOrderByID, scrollToTop, cantPokemons, poke, filteredPokemons, offset } = useContext(Context)
   const [visible, setVisible] = useState(false)
   
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 1500){
+    if (scrolled > 600){
       setVisible(true)
     } 
     else if (scrolled <= 1500){
@@ -44,9 +43,23 @@ export const HomePage = () => {
                 <PokemonList/>
               </section>
               <section className="cargar-pokemones">
-                <button className="asd" onClick={onClickLoadMore}>
-                  Cargar mas
-                </button>
+                {/* <button className="load-more" onClick={onClickLoadMore}>
+                  Cargar más pokemon
+                </button> */}
+                {filteredPokemons.length > offset ? (
+                    <button className="load-more" onClick={onClickLoadMore}>
+                      Cargar más pokemon
+                    </button>
+                  ) : (
+                    <></>
+                  )}
+                {filteredPokemons.length === 0 && poke.length > offset ? (
+                    <button className="load-more" onClick={onClickLoadMore}>
+                      Cargar más pokemon
+                    </button>
+                  ) : (
+                    <></>
+                  )}
                 <button style={{display: visible ? 'inline' : 'none'}} className="scroll" onClick={scrollToTop}>
                   top
                 </button>
