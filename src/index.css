@@ -1,0 +1,577 @@
+.elemento-lista-pokemon:hover{
+  opacity:14;
+  color:#36559f;
+  scale: 90%;
+  transform: scale(120%);
+  transition-duration: 1s;
+  transition-delay: 0s;
+  transition: transform .3s ease-in-out, scale(90deg) .3s ease-in-out; 
+}
+
+.fondo {
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: center;
+}
+
+
+.Top {
+  height: 200px;
+  background-color: #e7e7e7;
+}
+
+.box {
+  width: 100px;
+  height: 30px;
+  background-color: #ffffff;
+}
+
+/* Buscador--------------------------------------------------------------------- */
+
+.Buscador {
+  display: flex;
+  /* justify-content: space-around; */
+  /* height: 160px; */
+  background-color: #1f1f1f;
+  text-align: center;
+}
+
+.search-pokemon {
+  display: grid;
+  position: absolute;
+  left: 15%;
+  align-content: center;
+}
+
+.text-search {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+  color:white;
+  font-family: "Roboto",arial,sans-serif;
+  font-size: 30px;
+  top: 1em;
+  right: 4em;
+}
+
+.container {
+  display: flex;
+  position: absolute;
+  top: 3em;
+}
+
+.form-group input {
+  width: 300px;
+  height: 50px;
+}
+
+.btn-search {
+  border-radius: 10%;
+  position: relative;
+  width: 50px;
+  left: 10px;
+  color: white;
+  background-color: rgb(245, 161, 71);
+  font-size: 20px;
+}
+
+/*--------------------------------------------------------------------- */
+
+.asd {
+  background-color: red;
+  color:white;
+  border-radius: 10%;
+  height: 50px;
+  width: 100px;
+}
+
+.asd:hover {
+  background-color: white;
+  color:black
+}
+
+.cargar-pokemones {
+  height: 200px;
+  text-align: center;
+}
+
+.fondo-ventana {
+  background-color: #acb1b6;
+  width:80%;
+  display: flex;
+  justify-content: center;
+}
+
+.fondo-pokemones {
+  background-color: #f3f3f3;
+  width:80%;
+  display: block;
+  justify-content: center;
+}
+
+#grid-pokemones {
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 3fr);
+}
+
+.elemento-lista-pokemon {
+  list-style-type: none;
+  padding: 10px 10px 10px 10px;
+}
+
+.Ordenamiento {
+  display: flex;
+  justify-content: space-between;
+}
+
+.scroll {
+  z-index: 1;
+  display: flex;
+  border-radius: 10%;
+	justify-content: center;
+  top: 700px;
+	left: 1000px;
+	width: 80px;
+	color: #555;
+	background-color: #f2f2f2;
+	transition: all 0.3s linear;
+	position: fixed;
+  opacity: 1;
+}
+
+.scroll.active {
+  opacity: 1;
+}
+
+.encontrados {
+  position: relative;
+  left: 40px;
+  font-family: "Roboto",arial,sans-serif;
+  font-size: 20px;
+}
+
+ /* Selector de ordenamiento -------------------------------------------------------------------------- */
+
+ select {
+  display: none;
+}
+
+.sort-section {
+  display: flex;
+  justify-content:right;
+  height: 30px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.sort-text {
+  font-family: "Roboto",arial,sans-serif;
+  color: #484848;
+  position: relative;
+  right:20px;
+  bottom: 15px;
+}
+
+.select-container {
+
+  position: relative;
+  min-width: 250px;
+  height: 30px;
+}
+
+label {
+  display: block;
+  font-family: "Roboto",arial,sans-serif;
+  line-height: 1.5;
+  text-indent: 0.5em;
+}
+
+.select-box {
+  width: 100%;
+  border-radius: 2%;
+  color: white;
+  background-color: rgb(47, 47, 47);
+  font-size: 20px;
+}
+
+.selected-item:hover {
+  cursor: pointer;
+}
+
+.selected-item:hover > .icon-container {
+  background-color: rgb(23, 23, 23);
+}
+
+.select-box.active > .select-items{
+  display:block;
+}
+
+.select-items {
+  display:none;
+  font-family: "Roboto",arial,sans-serif;
+  bottom: -10.8rem;
+  overflow: hidden;
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.select-items.active {
+  display:block;
+}
+
+.select-item {
+  position: relative;
+  font-size: 15px;
+  text-align: justify;
+  text-indent: 30px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 100%;
+  color: white;
+  background-color: rgb(47, 47, 47);
+}
+
+.select-item:hover {
+  background-color: rgb(25, 25, 25);
+  cursor: pointer;
+}
+
+.select-container .icon-container {
+  width: 30px;
+  height: 95%;
+  border-radius: 10%;
+  position: absolute; 
+  bottom: 0.8px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.icon-container {
+  background-color: #282828;
+  color: white;
+}
+
+ /* -------------------------------------------------------------------------- */
+
+ /* filter types---------------------------------------------- */
+
+.filter {
+  position: relative;
+  right: -50%;
+}
+
+.types {
+  display: grid;
+  justify-items:flex-end;
+  height: 150px;
+  transition-delay: 0.3s;
+  transition: all 0.3s ease;
+}
+
+.type-text {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  top: 60px;
+  height: 10px;
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: #fcfcfc;
+  font-family: "Flexo-Demi",arial,sans-serif;
+  font-size: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.type-text:hover {
+  color: #f0e741;
+}
+
+.types.active .type-text {
+  top: 10px;
+}
+
+.types.active {
+  height: 400px;
+}
+
+.type-menu {
+  position: relative;
+  top: -50px;
+  height: 180px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+  pointer-events: none;
+  /* transition: all 0.3s ease; */
+  opacity: 0;
+}
+
+.type-selected{
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 100px;
+  grid-template-columns: repeat(2, max-content);
+  color: #fcfcfc;
+  font-family: "Flexo-Demi",arial,sans-serif;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+input[type=checkbox] {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+}
+
+input[type="checkbox"]:checked {
+  content: "";
+  background-color: #62aeff;
+}
+
+.type-name {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+  font-size: 15px;
+  border-radius: 5%;
+  cursor: pointer;
+  text-align: left;
+  width: 90px;
+}
+
+.type-selected:hover {
+  color: rgb(251, 252, 165);
+}
+
+.types.active .type-menu {
+  transition: all 0.3s ease;
+  transition-delay: 0.3s;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* -------------------------------------------------------------- */
+
+.dropdown.active > .link,
+.link:hover {
+  color: rgb(251, 252, 165);
+}
+
+.dropdown-menu {
+  left: 0;
+  top: calc(100% + .25rem);
+  background-color: rgb(50, 50, 50);
+  padding: .75rem;
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown.active > .link + .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.information-grid {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 1rem;
+}
+
+.dropdown-links {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.elemento-menu:hover {
+  background: rgb(198, 198, 224);
+  border-radius: 10%;
+  background-size: 110%;
+}
+
+a {
+  text-decoration: none
+}
+
+.fondo-imagen-pokemon {
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to top, #d0d0d0,  #e7e7e7 90%);
+  border-radius: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.imagen-pokemon {
+  z-index: 1;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.numero-pokemon {
+  position:relative;
+  font-size: 12px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(156, 156, 156);
+  text-transform: uppercase;
+  text-align: left;
+  padding-top: 5px;  
+}
+
+.nombre-pokemon {
+  position:relative;
+  font-size: 16px;
+  font-family: "Flexo-Demi",arial,sans-serif;
+  color: #313131;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+a:hover {
+  transition: all 1s ease-in-out;
+  -webkit-transform: rotate(-360deg);
+}
+
+/* cuadros de tipo ------------------------------------------------------ */
+.class-block {
+ display: flex;
+}
+
+.clase {
+  position: relative;
+  font-family: "Flexo-Demi",arial,sans-serif;
+  padding-right: 5px;
+  width: 90px;
+  height: 20px;
+}
+
+#nombre-clase {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5%;
+}
+
+.bug {
+  background-color: rgb(24, 82, 20);
+  color:rgb(255, 255, 255);
+}
+
+.dragon {
+  background:linear-gradient(to top, #36559f,  #af2924 90%);
+  color:rgb(255, 255, 255);
+}
+
+.fairy {
+  background-color: rgb(189, 111, 181);
+  color:rgb(0, 0, 0);
+}
+
+.fire {
+  background-color: rgb(218, 121, 31);
+  color:rgb(255, 255, 255);
+}
+
+.ghost {
+  background-color: rgb(119, 29, 164);
+  color:rgb(255, 255, 255);
+}
+
+.ground {
+  background:linear-gradient(to top, #f0e741,  #624b14 90%);
+  color:rgb(0, 0, 0);
+}
+
+.normal {
+  background-color: rgb(164, 164, 164);
+  color:rgb(0, 0, 0);
+}
+
+.psychic {
+  background-color: rgb(150, 50, 134);
+  color:rgb(255, 255, 255);
+}
+
+.steel {
+  background-color: rgb(110, 126, 138);
+  color:rgb(0, 0, 0);
+}
+
+.dark {
+  background-color: rgb(62, 66, 69);
+  color:rgb(255, 255, 255);
+}
+
+.electric {
+  background-color: rgb(217, 211, 32);
+  color:rgb(0, 0, 0);
+}
+
+.fighting {
+  background-color: rgb(130, 75, 30);
+  color:rgb(255, 255, 255);
+}
+
+.flying {
+  background:linear-gradient(to top, #419ef0,  #898989);
+  color:rgb(0, 0, 0);
+}
+
+.grass {
+  background-color: rgb(96, 206, 76);
+  color:rgb(0, 0, 0);
+}
+
+.ice {
+  background-color: rgb(76, 187, 206);
+  color:rgb(0, 0, 0);
+}
+
+.poison {
+  background-color: rgb(193, 76, 206);
+  color:rgb(255, 255, 255);
+}
+
+.rock {
+  background-color: rgb(178, 146, 78);
+  color:rgb(255, 255, 255);
+}
+
+.water {
+  background-color: rgb(76, 156, 206);
+  color:rgb(255, 255, 255);
+}
+
+/* Clase------------------------------------------------------ */

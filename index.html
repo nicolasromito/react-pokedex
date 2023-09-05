@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/react.svg" />
+    <!-- <link rel="icon" type="image/ico" href="/Pokemon.ico"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <script>
+      
+      if(window.pageYOffset > 1500){
+        let currentPosition
+        currentPosition = e.target.closest("[position]")
+        currentPosition.classList.toggle("active")
+        document.querySelectorAll("[position].active").forEach(position => {
+          if (position === currentPosition) return
+          dropdopositionwn.classList.remove("active")
+        })
+      }
+      document.addEventListener("click", e => {
+        const isDropdownButton = e.target.matches("[data-dropdown-button]")
+        if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
+  
+        let currentDropdown
+        if (isDropdownButton) {
+          currentDropdown = e.target.closest("[data-dropdown]")
+          currentDropdown.classList.toggle("active")
+        }
+      
+        document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
+          if (dropdown === currentDropdown) return
+          dropdown.classList.remove("active")
+        })
+
+        const isTypesActive = e.target.matches("[data-types-button]")
+        if (!isTypesActive && e.target.closest("[data-types") != null) return
+        
+        let currentType
+        if (isTypesActive) {
+          currentType = e.target.closest("[data-types]")
+          currentType.classList.toggle("active")
+        }
+     })
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
